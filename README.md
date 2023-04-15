@@ -81,6 +81,10 @@ Start the development server on `http://localhost:3000`
 yarn dev -o
 ```
 
+## Devtools
+
+Using Nuxt dev tools - https://devtools.nuxtjs.org/guide
+
 ## Production
 
 Build the application for production:
@@ -94,3 +98,8 @@ Locally preview production build:
 ```bash
 yarn preview
 ```
+
+## Packages
+
+Tailwind -
+Pug -
