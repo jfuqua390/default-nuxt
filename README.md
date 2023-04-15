@@ -101,5 +101,6 @@ yarn preview
 
 ## Packages
 
-Tailwind -
-Pug -
+Tailwind - https://tailwindcss.com/docs/installation
+Pug - https://pugjs.org/api/getting-started.html
+HeadlessUI components - https://github.com/tailwindlabs/headlessui
