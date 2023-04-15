@@ -11,26 +11,64 @@ yarn install
 ```
 
 ## Manual Setup
+Just how I set it up in case I need this in the future
 
 ```bash
-#yarn
+#Initialize Nuxt
 npx create-nuxt-app <project-name>
 cd <project-name>
-// Install tailwind
+yarn install
+
+#Install tailwind
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init
---follow a few steps on tailwindcss
 
-yarn add pug
-yarn add --dev prettier @prettier/plugin-pug
+#Add this to nuxt.config.ts
+postcss: {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+    ...(process.env.NODE_ENV === 'production' ? { cssnano: {} } : {})
+  },
+},
 
+#Add this to tailwind.config.js
+content: [
+  "./components/**/*.{js,vue,ts}",
+  "./layouts/**/*.vue",
+  "./pages/**/*.vue",
+  "./plugins/**/*.{js,ts}",
+  "./nuxt.config.{js,ts}",
+  "./app.vue",
+],
+
+#Create a ./assets/css/main.css and add this
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#Add this to tailwind.config.ts
+css: ["~/assets/css/main.css"],
+
+#Tailwind plugins I like
 yarn add -D @tailwindcss/forms
 yarn add -D @tailwindcss/container-queries
 yarn add -D tailwind-scrollbar
---add these to tailwindconfig
-require('@tailwindcss/forms'),
-require('@tailwindcss/container-queries'),
-require('tailwind-scrollbar')
+
+#Add these to tailwind.config.js - under plugins
+plugins: [
+  require('@tailwindcss/forms'),
+  require('@tailwindcss/container-queries'),
+  require('tailwind-scrollbar')
+],
+
+#pug
+yarn add pug
+yarn add --dev prettier @prettier/plugin-pug
+
+#Add separator to tailwind.config because of pug conflicts
+separator: "_",
+
 ```
 
 ## Development Server
