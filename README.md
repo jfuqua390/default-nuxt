@@ -2,15 +2,17 @@
 
 This repo is my starter for any future Nuxt3 projects. It has tailwind and pug installed by default.
 
-## Setup
+## Quick Setup
 
-Make sure to install the dependencies:
+To do a quick setup, download zip and run yarn install
+
 ```bash
 # yarn
 yarn install
 ```
 
 ## Manual Setup
+
 Just how I set it up in case I need this in the future
 
 ```bash

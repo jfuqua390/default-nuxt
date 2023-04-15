@@ -1,4 +1,4 @@
 <template lang="pug">
-.flex
-  NuxtWelcome
+.flex.w-screen
+  NuxtWelcome.w-full
 </template>
